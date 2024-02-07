@@ -8,6 +8,7 @@ const displayScore = document.querySelector(".score");
 const displayHScore = document.querySelector(".highscore");
 const userNumber = document.querySelector(".number");
 let successAudio = new Audio("./succ.mp3");
+let losingAudio = new Audio("./loseSound.mp3")
 let winner = document.querySelector(".winner");
 //make messages changes when trying enter un valid number 
 let msgs = ["ادخل رقم بين 1 الى 20 فقط .. متتعبنيش معاك","ما قولنا ام 1 ل 20 يخى","حرام عليك اموت نفسى يمكن ترتاح قولت زفت 1 ل 20 بس"]
@@ -56,6 +57,7 @@ function checking() {
     userNumber.textContent = secret;
     displayMsg.textContent = "للاسف خسرت .. اضغط على زرار اللعب مرة اخرى";
     userNumber.style.width = "30rem";
+    losingAudio.play();
   }
 }
 // reset function
@@ -70,6 +72,7 @@ function resetData() {
   userNumber.style.width = "15rem";
   winner.classList.add("hidden");
 successAudio.pause();
+losingAudio.pause();
 
 }
 // check btn
