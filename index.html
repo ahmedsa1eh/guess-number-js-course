@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>خمن الرقم الصحيح!</title>
+  </head>
+  <body>
+    <div class="winner hidden">
+      <lottie-player
+        src="https://assets9.lottiefiles.com/packages/lf20_0y2x6xwo.json"
+        background="transparent"
+        speed="1"
+        style="width: 100%; height: 90%"
+        loop
+        autoplay
+      ></lottie-player>
+    </div>
+
+    <header>
+      <h1>خمن الرقم ؟</h1>
+      <p class="between">(بين 1 الى 20 فقط)</p>
+      <button class="btn again">اللعب مرة اخرى!</button>
+      <div class="number">?</div>
+    </header>
+    <main>
+      <section class="left">
+        <input type="number" class="guess" />
+        <button class="btn check">جرب!</button>
+      </section>
+      <section class="right">
+        <p class="message">ابدا تخمين</p>
+        <p class="label-score">💯 الاسكور: <span class="score">20</span></p>
+        <p class="label-highscore">
+          🥇 اعلى سكور: <span class="highscore">0</span>
+        </p>
+      </section>
+    </main>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
