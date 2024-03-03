@@ -10,9 +10,6 @@ const userNumber = document.querySelector(".number");
 let successAudio = new Audio("./succ.mp3");
 let losingAudio = new Audio("./loseSound.mp3")
 let winner = document.querySelector(".winner");
-//make messages changes when trying enter un valid number 
-let msgs = ["ادخل رقم بين 1 الى 20 فقط .. متتعبنيش معاك","ما قولنا ام 1 ل 20 يخى","حرام عليك اموت نفسى يمكن ترتاح قولت زفت 1 ل 20 بس"]
-let random = Math.ceil(Math.random() * msgs.length) - 1;
 
 // check the stored high score if it exit in local storage and assign it to highscore
 let storedHScore = Number(localStorage.getItem("highscore"));
@@ -22,8 +19,7 @@ displayHScore.textContent = highScore;
 function checking() {
   const guess = Number(document.querySelector(".guess").value);
   if (guess < 1 || guess > 20 || guess == '') {
-    displayMsg.textContent = msgs[random];
-    random = Math.ceil(Math.random() * msgs.length) - 1 ;
+    displayMsg.textContent = "ادخل رقم بين 1 الى 20 فقط";
   } else if (!(score <= 0)) {
     // when user win
     if (guess === secret) {
